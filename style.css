@@ -1,0 +1,129 @@
+:root{
+    /* COLORS */
+    --main-color : #000000;
+    --secondary-color : #1ab1c5;
+    --third-color : #87a500;
+    --highlight-color : #04550a;
+    --text-color : #ffffff;
+    /* FONTS */
+    --primary-font : 'Roboto', sans-serif;
+    --secondary-font : 'Pirata One', sans-serif;
+}
+
+html, body{
+    height: 100%;
+}
+
+body{
+    font-size: 16px;
+    font-family: var(--primary-font);
+    background: var(--main-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* CETTE PARTIE EST NECESSAIRE POUR LENIS SMOOTH SCROLL */
+
+html.lenis, html.lenis body {
+    height: auto;
+  }
+  
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+  
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
+
+/* Gestion du background */
+
+.background{
+    position: fixed;
+    top: 50px !important;
+    inset: 0;
+    justify-content: center;
+    display: inline-flex;
+    gap: 100px;
+    flex-direction: row;
+    z-index: -1;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.bg-shape1{
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    position: relative;
+    animation: one 20s infinite;
+}
+
+.bg-shape2{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    position: relative;
+    transform: translateY(50%);
+    animation: two 20s infinite;
+}
+
+@keyframes one{
+    0%{left: 0px; top: 0;}
+    25%{left: -10px; top: 80px;}
+    50%{left: 20px; top: 180px;}
+    75%{left: 50px; top: 100px;}
+    100%{left: 0; top: 0;}
+}
+
+@keyframes two{
+    0%{left: 0px; top: 0;}
+    25%{left: 50px; top: 10px;}
+    50%{left: 100px; top: 50px;}
+    75%{left: 50px; top: 100px;}
+    100%{left: 0; top: 0;}
+}
+
+.opacity-50{
+    opacity: 0.5;
+}
+
+.bg-blur{
+    filter: blur(90px);
+}
+
+.bg-primary{
+    background: var(--highlight-color);
+}
+
+.bg-secondary{
+    background: var(--secondary-color);
+}
+
+.bg-third{
+    background: var(--third-color);
+}
+
+/* Fin du background */
+
+.title{
+    font-size: 3rem;
+    font-family: var(--secondary-font);
+    text-align: center;
+    margin-top: 300px;
+}
