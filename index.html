@@ -1,33 +1,97 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jordan Pieton | Développeur web</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
     <script type="module" src="script.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <header></header>
     <main class="container">
-        <!-- Gestion du background -->
-         <div class="background inset-0 justify-center">
-            <div class="bg-shape1 bg-primary opacity-50 bg-blur"></div>
-            <div class="bg-shape2 bg-secondary opacity-50 bg-blur"></div>
-            <div class="bg-shape1 bg-third opacity-50 bg-blur"></div>
-         </div>
-        <!-- Fin du background -->
-        <h1 class="title">Lorem ipsum dolor sit amet.</h1>
-        <h1 class="title">Lorem ipsum dolor sit amet.</h1>
-        <h1 class="title">Lorem ipsum dolor sit amet.</h1>
-        <h1 class="title">Lorem ipsum dolor sit amet.</h1>
-        <h1 class="title">Lorem ipsum dolor sit amet.</h1>
+      <!-- Gestion du background -->
+      <div class="background inset-0 justify-center">
+        <div class="bg-shape1 bg-primary opacity-50 bg-blur"></div>
+        <div class="bg-shape2 bg-secondary opacity-50 bg-blur"></div>
+        <div class="bg-shape1 bg-third opacity-50 bg-blur"></div>
+      </div>
+      <!-- Fin du background -->
+      <section class="hero" id="hero">
+        <div class="hero--text">
+          <h1 class="hero--title">Jordan Pieton</h1>
+          <h2 class="hero--subtitle">Développeur web autodidacte</h2>
+        </div>
+        <nav class="hero--nav">
+          <ul>
+            <li>
+              <a href="#hero" aria-current="page" class="active">Accueil</a>
+            </li>
+            <li><a href="#about">A propos</a></li>
+            <li><a href="#projects">Projets</a></li>
+            <li><a href="#realisations">Réalisations</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </section>
+      <section class="about" id="about">
+        <h2 class="section--title">A propos</h2>
+        <div class="about--container">
+            <div class="about--text">
+                <p>
+                Je suis Jordan, un passionné de technologie de 33ans en pleine
+                transition professionnelle vers le développement informatique, avec
+                une passion particulière pour le développement front-end. <br><br>
+                Mon parcours m'a amené à explorer différentes voies, mais c'est dans le monde du
+                code que je trouve ma véritable motivation et épanouissement. <br><br>
+                Actuellement en auto-apprentissage, je m'immerge dans les langages
+                fondamentaux du web : HTML, CSS et JavaScript. Ces derniers mois, j'ai
+                travaillé assidûment sur divers projets personnels, que vous pourrez
+                découvrir dans la suite de ce portfolio. Chacun de ces projets
+                représente une étape de mon apprentissage et témoigne de mon
+                engagement à maîtriser les compétences nécessaires pour réussir dans
+                le domaine du développement front-end. <br><br> Mon objectif est clair :
+                intégrer une formation spécialisée pour approfondir mes connaissances
+                et acquérir un diplôme reconnu qui me permettra d'accéder au marché du
+                travail en tant que développeur web front-end. Je suis convaincu que
+                la combinaison de ma passion pour la technologie, ma détermination à
+                apprendre et mon souci du détail font de moi un candidat idéal pour
+                évoluer dans ce secteur en constante évolution. <br><br> Ce portfolio est non
+                seulement un reflet de mon travail actuel, mais aussi une vitrine de
+                mon potentiel futur. J'espère que vous prendrez plaisir à explorer mes
+                projets et à suivre mon parcours de développement. N'hésitez pas à me
+                contacter si vous souhaitez en savoir plus sur mes compétences, mes
+                projets ou mes aspirations professionnelles.
+                </p>
+                <div class="about--text--links">
+                    <a href="https://www.linkedin.com/in/jordan-pieton-005946121/" target="_blank" class="cta--reverse"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                    <a href="#contact" class="cta"><i class="fa-solid fa-envelope"></i> Contactez moi !</a>
+                  </div>
+              </div>
+              <div class="about--img">
+                  <img src="img/about.svg" alt="illustration" height="400" width="400">
+              </div>
+        </div>
+      </section>
+      <section class="projects" id="projects">
+        <h2 class="section--title">Projets</h2>
+      </section>
+      <section class="realisations" id="realisations">
+        <h2 class="section--title">Réalisations</h2>
+      </section>
+      <section class="contact" id="contact">
+        <h2 class="section--title">Contact</h2>
+      </section>
     </main>
     <footer></footer>
-    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script> 
-</body>
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+  </body>
 </html>
