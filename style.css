@@ -144,17 +144,17 @@ html.lenis, html.lenis body {
 
 .hero--nav{
     position: sticky;
-    top: 50px;
+    top: 30px;
     transition: 0.3s ease;
 }
 
 .hero--nav ul{
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 15px 10px;
     flex-wrap: wrap;
     padding: 25px;
-    border-radius: 20px;
+    border-radius: 45px;
     width: fit-content;
     margin: 0 auto;
 }
@@ -218,16 +218,27 @@ html.lenis, html.lenis body {
     background: var(--highlight-color);
 }
 
-.about--img{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 /* PROJECTS SECTION */
 
 .projects{
     padding: 60px;
+}
+
+.project--card{
+    padding: 40px;
+}
+
+.project--card--title{
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.project--card--inner{
+    display: flex;
+}
+
+.project--card--text{
+    padding-right: 40px;
 }
 
 /* REALISATIONS SECTION */

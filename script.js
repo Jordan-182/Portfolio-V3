@@ -60,14 +60,14 @@ window.addEventListener('scroll', () => {
   if (heroBottom <= 300) {
       // Fixe la nav en haut si .hero n'est plus visible
       nav.style.position = 'fixed';
-      nav.style.top = '50';
+      nav.style.top = '30';
       nav.style.width = '100%';
-      navContainer.style.background = 'black';
+      navContainer.style.background = 'rgba(0, 0, 0, 0.9)';
   } else {
       // Remet la nav en sticky quand on est dans .hero
       nav.style.position = 'sticky';
       navContainer.style.background = 'transparent';
-  }
+  };
 });
 
 
