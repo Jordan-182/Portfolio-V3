@@ -1,9 +1,9 @@
 :root{
     /* COLORS */
     --main-color : #000000;
-    --secondary-color : #1ac584;
-    --third-color : #13aa06;
-    --highlight-color : #04550a;
+    --secondary-color : #33703A;
+    --third-color : #764134;
+    --mesh-color : #26532b;
     --text-color : #ffffff;
     /* FONTS */
     --primary-font : 'Roboto', sans-serif;
@@ -108,16 +108,8 @@ html.lenis, html.lenis body {
     filter: blur(90px);
 }
 
-.bg-primary{
-    background: var(--highlight-color);
-}
-
-.bg-secondary{
-    background: var(--secondary-color);
-}
-
-.bg-third{
-    background: var(--third-color);
+.bg-mesh{
+    background: var(--mesh-color);
 }
 
 /* HERO SECTION */
@@ -161,7 +153,7 @@ html.lenis, html.lenis body {
 
 .hero--nav ul li a{
     color: var(--text-color);
-    border: 3px solid var(--highlight-color);
+    border: 2px solid var(--secondary-color);
     border-radius: 20px;
     padding: 10px 15px;
     transition: 0.3s ease-out;
@@ -169,11 +161,11 @@ html.lenis, html.lenis body {
 }
 
 .hero--nav ul li a:hover{
-    background: var(--highlight-color);
+    background: var(--secondary-color);
 }
 
 .active{
-    background: var(--highlight-color);
+    background: var(--secondary-color);
 }
 
 /* ABOUT SECTION */
@@ -207,69 +199,75 @@ html.lenis, html.lenis body {
 
 .about--text--links a{
     color: var(--text-color);
-    border: 3px solid var(--highlight-color);
-    border-radius: 20px;
-    padding: 10px 15px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 25px;
+    padding: 15px 20px;
     transition: 0.3s ease-out;
     font-weight: bold;
 }
 
 .about--text--links a:hover{
-    background: var(--highlight-color);
+    background: var(--secondary-color);
 }
 
-/* PROJECTS SECTION */
+/* PROJECTS & REALISATIONS SECTION */
 
-.projects{
+.projects,
+.realisations{
     padding: 60px;
 }
 
-.project--card{
+.project--card,
+.realisation--card{
     padding: 40px;
     border-bottom: 1px solid var(--text-color);
 }
 
-.project--card--title{
+.project--card--title,
+.realisation--card-title{
     font-size: 1.5rem;
     margin-bottom: 25px;
+    font-weight: bold;
+    color: var(--secondary-color);
+    font-style: italic;
 }
 
-.project--card--inner{
+.project--card--inner,
+.realisation--card--inner{
     display: flex;
 }
 
-.project--card--text{
+.project--card--text,
+.realisation--card-text{
     padding-right: 40px;
 }
 
-.project--card--stack{
+.project--card--stack,
+.realisation--card--stack{
     margin-top: 15px;
     font-size:1.7rem;
 }
 
-.project--card--img{
+.project--card--img,
+.realisation--card--img{
     margin-left: auto;
     display: flex;
     flex-direction: column;
 }
 
-.project--btn{
-    padding: 10px;
+.project--btn,
+.realisation--btn{
+    padding: 15px 20px;
     margin: 15px auto 0;
-    border: 2px solid var(--highlight-color);
-    border-radius: 20px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 25px;
     color: var(--text-color);
     transition: 0.3s ease-out;
 }
 
-.project--btn:hover{
-    background: var(--highlight-color);
-}
-
-/* REALISATIONS SECTION */
-
-.realisations{
-    padding: 60px;
+.project--btn:hover,
+.realisation--btn:hover{
+    background: var(--secondary-color);
 }
 
 /* CONTACT SECTION */
@@ -279,3 +277,64 @@ html.lenis, html.lenis body {
 }
 
 /* GESTION DU RESPONSIVE */
+
+@media only screen and (max-width: 1040px){
+    .about--container{
+        flex-direction: column;
+    }
+
+    .section--title{
+        text-align: center;
+    }
+
+    .about--text{
+        padding: 60px;
+    }
+
+    .project--card--inner,
+    .realisation--card--inner{
+        flex-direction: column;
+    }
+
+    .project--card--img,
+    .realisation--card--img{
+        margin: 10px auto 0;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .about--text{
+        padding: 0;
+    }
+
+    .about--img img{
+        height: 300px;
+        width: 300px;
+    }
+
+    .project--card,
+    .realisation--card{
+        padding: 0 0 40px 0;
+    }
+
+    .project--card--text,
+    .realisation--card--text{
+        padding: 0;
+    }
+
+    .project--card:not(:first-child){
+        padding-top: 40px;
+    }
+
+    .realisation--card--img img{
+        width: 300px;
+        height: auto;
+    }
+
+    .about,
+    .projects,
+    .realisations,
+    .contact{
+        padding: 20px;
+    }
+}
