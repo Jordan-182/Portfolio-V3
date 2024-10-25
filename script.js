@@ -25,7 +25,7 @@ const links = document.querySelector('.hero--nav li a'); // Récupère les liens
 const observerOptions = {
     root: null, // Utilise la fenêtre du navigateur comme root
     rootMargin: '0px',
-    threshold: 0.2 // A changer selon les besoins (0.5 signifie que 50% de la section doit être visible)
+    threshold: 0.3 // A changer selon les besoins (0.5 signifie que 50% de la section doit être visible)
 };
 
 const observer = new IntersectionObserver((entries) => {
