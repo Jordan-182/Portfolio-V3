@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
     <script type="module" src="script.js" defer></script>
@@ -46,7 +47,7 @@
         <h2 class="section--title">A propos</h2>
         <div class="about--container">
             <div class="about--text">
-                <p>
+                <p data-splitting>
                 Je suis Jordan, un passionné de technologie de 33ans en pleine
                 transition professionnelle vers le développement informatique, avec
                 une passion particulière pour le développement front-end. <br><br>
@@ -89,10 +90,11 @@
             <div class="project--card--inner">
               <div class="project--card--text">
                 <p>
-                Blink-182-fr est un site réalisé sur un groupe de musique. <br><br>
-                Il s'agit du premier projet que j'ai développé dans le cadre de mon apprentissage du HTML et du CSS. <br><br> 
-                J'ai utilisé Tailwind pour me faciliter la mise en page et le responsive. <br><br>
-                Il comporte un peu de JavaScript pour l'interactivité du menu "hamburger" sur les petits écrans.
+                Blink-182-fr est un site réalisé sur un groupe de musique. <br> <br>
+                Le site est composé d'une page d'accueil inspirée de la pochette du dernier album du groupe. Les photos sont des liens vers les pages dédiées aux membres du groupe, qui 
+                sont également accessibles par le lien "membres" de la navbar. <br><br>Il y a également une page "histoire" qui retrace la biographie du groupe, ainsi qu'une page discographie 
+                reprenant l'ensemble des albums, qui ont eux aussi leur page dédiée. Pour finir, un lien vers la boutique officielle du groupe. <br><br>
+                Il s'agit du premier projet que j'ai développé dans le cadre de mon apprentissage du HTML et du CSS. <br>J'ai utilisé Tailwind pour me faciliter la mise en page et le responsive. Il comporte un peu de JavaScript pour l'interactivité du menu "hamburger" sur les petits écrans.
               </p>
               <p class="project--card--stack"><i class="fa-brands fa-html5"></i> <i class="fa-brands fa-css3-alt"></i> <i class="fa-brands fa-js"></i></p>
               </div>
@@ -109,7 +111,9 @@
                 <p>
                   Lorsque j'ai découvert le concept d'API, j'ai souhaité développer une application web météo afin de pratiquer les appels API 
                   et l'intégration des résultats obtenus dans le HTML. <br><br> L'application demande l'accord à l'utilisateur pour accéder à sa 
-                  géolocalisation, mais l'utilisateur peut également rechercher la ville de son choix pour en obtenir la météo en temps réel.
+                  géolocalisation et afficher les données en temps réel pour son emplacement. <br><br>
+                  L'utilisateur a également la possibilité d'indiquer la ville de son choix dans un input prévu à cet effet pour pouvoir afficher les informations de n'importe qu'elle ville. <br><br>
+                  Le background de l'application change de façon dynamique selon les prévisions météorologiques, afin d'afficher une ambiance qui suit avec la météo annoncée.
                 </p>
                 <p class="project--card--stack"><i class="fa-brands fa-html5"></i> <i class="fa-brands fa-css3-alt"></i> <i class="fa-brands fa-js"></i></p>
               </div>
@@ -125,8 +129,10 @@
               <div class="project--card--text">
                 <p>
                   Dans le cadre de l'apprentissage du JavaScript, j'ai souhaité réaliser un jeu sous forme de quiz afin de pouvoir travailler sur 
-                  de nombreux aspects du langage. <br><br> Ce quiz est basé sur l'histoire d'un club de football. <br><br>Le quiz propose 10 questions 
-                  dans un ordre aléatoire avec 4 propositions de réponses chacune, puis un tableau qui récapitule les scores.
+                  de nombreux aspects du langage. <br><br> Ce quiz est basé sur l'histoire d'un club de football. <br><br>Une liste de 10 questions avec 4 choix de réponse est proposée 
+                  à l'utilisateur. Les questions sont posées dans un ordre aléatoire afin que l'ordre des questions soit différent à chaque session de jeu. <br><br>
+                  L'application indique directement à l'utilisateur si il a choisi la bonne réponse. <br><br> Une fois les 10 questions passées, l'utilisateur est redirigé vers un écran qui
+                  réacapitule son score. Un commentaire est également affiché selon le score du joueur.
                 </p>
                 <p class="project--card--stack"><i class="fa-brands fa-html5"></i> <i class="fa-brands fa-css3-alt"></i> <i class="fa-brands fa-js"></i></p>
               </div>
@@ -141,9 +147,12 @@
             <div class="project--card--inner">
               <div class="project--card--text">
                 <p>
-                  Pour poursuivre la découverte des API, j'ai souhaité m'entraîner sur celle de la NASA. <br><br> J'ai donc conçu un site qui permet 
+                  Pour poursuivre la découverte des API, j'ai souhaité m'exercer sur celle de la NASA. <br><br> J'ai donc conçu un site qui permet 
                   à l'utilisateur d'accéder aux photographies réalisées sur Mars par le robot Curiosity. <br><br>La recherche de photos s'effectue par 
-                  date, il suffit de sélectionner une date pour que le site affiche l'ensemble des photos transmises par le robot à la date choisie.
+                  date, il suffit de sélectionner une date pour que le site affiche l'ensemble des photos transmises par le robot à la date choisie. <br><br>
+                  J'envisage de faire évoluer ce projet et d'ajouter la possibilité de consulter les dernières photos transmises, car la recherche par date peut 
+                  souvent s'avérer infructueuse, étant donné que le robot n'envoie pas des photos tous les jours. <br><br>
+                  J'ai également pour projet d'améliorer le design dans l'avenir en utilisant ThreeJS.
                 </p>
                 <p class="project--card--stack"><i class="fa-brands fa-html5"></i> <i class="fa-brands fa-css3-alt"></i> <i class="fa-brands fa-js"></i></p>
               </div>
@@ -164,10 +173,13 @@
               <div class="realisation--card-text">
                 <p>
                   J'ai eu le plaisir de créer le site vitrine d'une amie qui lance son activité de sophrologie. <br><br> Ce site a pour but de la faire connaitre à de nouveaux 
-                  client et comporte une page pour présenter son parcours, puis une page présentant chacune des prestations qu'elle propose. <br><br>Le site propose également un 
-                  formulaire de contact pour la contacter directement par mail et des liens vers la page de prise de rendez-vous sur Résalib.
+                  client.<br><br>
+                  Le site est composé d'une page d'accueil qui la présente rapidement ainsi que les prestations qu'elle propose. Un carousel de ses avis clients vient ajouter de la 
+                  preuve sociale juste avant la section reprennant les différentes informations de contact. <br><br>
+                  Il y a également une page dédiée à sa présentation plus complète, et une page par préstation qu'elle propose afin de détailler les bienfaits et le fonctionnement de chacune. <br><br>
+                  Le site affiche à des endroits stratégiques des liens redirigeant vers la page de prise de rendez-vous qui se situe sur la plate-forme "Résalib".
                 </p>
-                <p class="realisation--card--stack"><i class="fa-brands fa-html5"></i> <i class="fa-brands fa-css3-alt"></i> <i class="fa-brands fa-js"></i></p>
+                <p class="realisation--card--stack"><i class="fa-brands fa-html5"></i> <i class="fa-brands fa-css3-alt"></i> <i class="fa-brands fa-js"></i> <i class="fa-brands fa-php"></i></p>
               </div>
               <div class="realisation--card--img">
                 <img src="img/aphton.webp" alt="illustration site" width="400" height="192">
@@ -179,9 +191,45 @@
       </section>
       <section class="contact" id="contact">
         <h2 class="section--title">Contact</h2>
+        <div class="contact--container">
+          <div class="contact--illustration">
+            <img src="img/contact.png" alt="illustration" width="350" height="350">
+            <div class="contact--links">
+              <a href="https://www.linkedin.com/in/jordan-pieton-005946121/" target="_blank" class="contact--link--btn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+              <a href="https://github.com/Jordan-182" target="_blank" class="contact--link--btn"><i class="fa-brands fa-square-github"></i> Github</a>
+            </div>
+          </div>
+          <div class="contact--form">
+            <!-- Formulaire de contact -->
+             <form id="contactForm" method="post">
+              <label for="Name">Votre nom</label>
+              <input type="text" name="name" id="Name" autocomplete="name" required>
+  
+              <label for="Email">Votre e-mail</label>
+              <input type="email" name="email" id="Email" autocomplete="email" required>
+  
+              <label for="Subject">Objet</label>
+              <input type="text" name="subject" id="Subject" required>
+  
+              <label for="Message">Votre message</label>
+              <textarea name="message" id="Message" required></textarea>
+  
+              <button class="form--btn" type="submit">Envoyer</button>
+                          <!-- Div pour afficher le message -->
+           <div id="formMessage"></div>
+           </form>
+          </div>
+        </div>
       </section>
     </main>
-    <footer></footer>
+    <footer class="footer" id="footer">
+      <p>Jordan Pieton 2024</p>
+      <p>Tous droits réservés</p>
+      <a href="#">Mentions légales</a>
+    </footer>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
   </body>
 </html>

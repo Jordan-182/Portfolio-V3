@@ -25,7 +25,7 @@ const links = document.querySelector('.hero--nav li a'); // Récupère les liens
 const observerOptions = {
     root: null, // Utilise la fenêtre du navigateur comme root
     rootMargin: '0px',
-    threshold: 0.3 // A changer selon les besoins (0.5 signifie que 50% de la section doit être visible)
+    threshold: 0.1 // A changer selon les besoins (0.5 signifie que 50% de la section doit être visible)
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -70,20 +70,70 @@ window.addEventListener('scroll', () => {
   };
 });
 
+// Split du texte à animer
 
-// LENIS SMOOTH SCROLL //
-// Initialize Lenis
+let selection = Splitting();
+
+// GSAP SCROLL TRIGGER
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.from(selection[0].chars , {
+  color: "transparent",
+  stagger: 0.5,
+  scrollTrigger: {
+      trigger: '.about',
+      start: 'top center',
+      end: '50% center',
+      scrub: true ,
+      markers: false
+  }
+});
+
+gsap.from('.about--img' , {
+  x: 50 ,
+  opacity: 0 ,
+  scrollTrigger: {
+      trigger: '.about--img',
+      start: 'top center',
+      end: '50% center',
+      scrub: true ,
+      markers: false
+  }
+});
+
+
+const cards = gsap.utils.toArray('.projects--container .project--card');
+
+gsap.to(cards , {
+  xPercent: -100 * (cards.length - 1),
+  ease: 'none',
+  scrollTrigger : {
+    trigger: '.projects--container',
+    pin: true,
+    scrub: true,
+    snap: 1 / (cards.length - 1),
+    end: () => "+=" + window.innerWidth * 3 // 3 fois la largeur de l'écran pour couvrir 4 items
+  },
+});
+
+
+// // LENIS SMOOTH SCROLL //
+// Initialize a new Lenis instance for smooth scrolling
 const lenis = new Lenis();
 
-// Listen for the scroll event and log the event data
+// Listen for the 'scroll' event and log the event data to the console
 lenis.on('scroll', (e) => {
   console.log(e);
 });
 
-// Use requestAnimationFrame to continuously update the scroll
-function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
-}
+// Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
+lenis.on('scroll', ScrollTrigger.update);
 
-requestAnimationFrame(raf);
+// Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
+// This ensures Lenis's smooth scroll animation updates on each GSAP tick
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000); // Convert time from seconds to milliseconds
+});
+
+// Disable lag smoothing in GSAP to prevent any delay in scroll animations
+gsap.ticker.lagSmoothing(0);

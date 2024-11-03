@@ -23,6 +23,10 @@ body{
     flex-direction: column;
 }
 
+body::-webkit-scrollbar {
+    display: none; /* Masque la barre de défilement sur Chrome, Safari et Edge */
+  }
+
 a{
     text-decoration: none;
 }
@@ -138,6 +142,7 @@ html.lenis, html.lenis body {
     position: sticky;
     top: 30px;
     transition: 0.3s ease;
+    z-index: 999;
 }
 
 .hero--nav ul{
@@ -212,15 +217,33 @@ html.lenis, html.lenis body {
 
 /* PROJECTS & REALISATIONS SECTION */
 
-.projects,
 .realisations{
-    padding: 60px;
+    overflow: hidden;
 }
 
-.project--card,
+.projects .section--title,
+.realisations .section--title{
+    padding: 60px 0 0 60px;
+    margin: 0;
+}
+
+.projects--container{
+    display: flex;
+    overflow: hidden;
+}
+
+.project--card{
+    height: 100vh;
+    width: 100vw;
+    flex-shrink: 0;
+    padding: 120px 100px 90px 80px;
+}
+
 .realisation--card{
+    height: 100vh;
+    width: 100vw;
+    flex-shrink: 0;
     padding: 40px;
-    border-bottom: 1px solid var(--text-color);
 }
 
 .project--card--title,
@@ -229,17 +252,21 @@ html.lenis, html.lenis body {
     margin-bottom: 25px;
     font-weight: bold;
     color: var(--secondary-color);
-    font-style: italic;
+    font-family: var(--secondary-font);
+    letter-spacing: 2px;
+    text-align: center;
 }
 
 .project--card--inner,
 .realisation--card--inner{
-    display: flex;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
 }
 
 .project--card--text,
 .realisation--card-text{
-    padding-right: 40px;
+    text-align: center;
+    padding: 0 200px;
 }
 
 .project--card--stack,
@@ -250,7 +277,7 @@ html.lenis, html.lenis body {
 
 .project--card--img,
 .realisation--card--img{
-    margin-left: auto;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
 }
@@ -273,7 +300,135 @@ html.lenis, html.lenis body {
 /* CONTACT SECTION */
 
 .contact{
-    padding: 60px;
+    padding: 0 60px 60px 60px;
+}
+
+.contact--container{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.contact--illustration{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact--links{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.contact--link--btn{
+    background: transparent;
+    width: 160px;
+    padding: 15px 0;
+    color: var(--text-color);
+    border-radius: 5px;
+    text-align: center;
+    border: 2px solid var(--secondary-color);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.contact--link--btn:hover{
+    background: var(--secondary-color);
+    color: var(--text-color);
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+label{
+    color: var(--text-color);
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+input{
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    height: 20px;
+    border-radius: 5px;
+    border: 2px solid var(--mesh-color);
+    background: rgba(255, 255, 255, 0.1);
+    outline: none;
+    color: var(--text-color);
+}
+
+input:focus{
+    outline: none;
+    border: 2px solid var(--secondary-color);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+textarea{
+    height: 150px;
+    border: 2px solid var(--mesh-color);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    outline: none;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+textarea:focus{
+    outline: none;
+    border: 2px solid var(--secondary-color);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.form--btn{
+    width: 150px;
+    padding: 15px;
+    margin: 0 auto;
+    border-radius: 5px;
+    border: 2px solid var(--secondary-color);
+    background: transparent;
+    color: var(--text-color);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.02rem;
+    transition: 0.3s ease-in-out;
+}
+
+.form--btn:hover,
+.form--btn:focus{
+    background: var(--secondary-color);
+    outline: none;
+}
+
+#formMessage{
+    color: var(--text-color);
+    font-weight: bold;
+    margin: 5px 0;
+    text-align: center;
+}
+
+/* FOOTER */
+
+.footer{
+    background: transparent;
+    padding: 25px 0;
+    margin-top: auto;
+    border-top: 2px solid var(--mesh-color);
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    color: var(--text-color);
+}
+
+.footer--text,
+.footer a{
+    color: var(--text-color);
 }
 
 /* GESTION DU RESPONSIVE */
